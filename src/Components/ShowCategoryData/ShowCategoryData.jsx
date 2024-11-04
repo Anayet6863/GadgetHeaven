@@ -1,17 +1,25 @@
 import React from "react";
-import { useLoaderData, useNavigate } from "react-router-dom";
-import AllProduct from "./AllProduct/AllProduct";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
+import ShowData from "../ShowData/ShowData";
+import AllProduct from "../AllProducts/AllProduct/AllProduct";
 
-const AllProducts = () => {
-  const allData = useLoaderData();
-  //console.log(allData);
+const ShowCategoryData = () => {
+  const categoryData = useLoaderData();
+ // console.log(categoryData);
+  const params = useParams();
+  const { category } = params;
   const navigate = useNavigate()
   const handleCategoryBtn=(category)=>{
       navigate(`/${category}`)
   }
+
+  const product = categoryData.filter((item) => item.category === category);
+ // console.log(product);
+
+
   return (
     <div>
-        <div className="text-center mt-5 mb-5 text-5xl font-semibold">
+         <div className="text-center mt-5 mb-5 text-5xl font-semibold">
             <h1>Explore Cutting-Edge Gadgets</h1>
         </div>
      <div className="container mx-auto flex">
@@ -27,14 +35,23 @@ const AllProducts = () => {
         {/* <button onClick={()=>{handleCategoryBtn("MacBook")}} className="btn">MacBook</button>
         <button onClick={()=>{handleCategoryBtn("iphone")}} className="btn">Iphone</button> */}
       </div>
-      <div id="card" className="w-9/10 bg-white grid grid-cols-3 gap-5 p-10 rounded-md">
-        {allData.map((item,idx) => (
-          <AllProduct key={idx} item={item}></AllProduct>
-        ))}
+      <div
+        id="card"
+        className="w-9/10 bg-white grid grid-cols-3 gap-5 p-10 rounded-md"
+      >
+         {product.map((item, idx) => {
+        return <ShowData key={idx} item={item}></ShowData>;
+      })}
       </div>
      </div>
+
+
+
+
+
+    
     </div>
   );
 };
 
-export default AllProducts;
+export default ShowCategoryData;
