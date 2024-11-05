@@ -1,8 +1,8 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import "./NavBar.css";
+import "./NavBarPro.css";
 import { useContext } from "react";
 import { cartContext } from "../Root/Root";
-const NavBar = () => {
+const NavBarPro = () => {
   const { products } = useContext(cartContext);
   const navigate = useNavigate();
   const handleCart = () => {
@@ -11,7 +11,6 @@ const NavBar = () => {
   const handleWishList = () => {
     navigate("/deshboard/whishlist");
   };
-  
   const links = (
     <>
       <div className="flex gap-5 font-bold">
@@ -20,12 +19,13 @@ const NavBar = () => {
         <NavLink to={"/statistics"}>Statistics</NavLink>
         <NavLink to={"/deshboard"}>Deshboard</NavLink>
         <NavLink to={"/self"}>History</NavLink>
+        
       </div>
     </>
   );
   return (
     <div>
-      <div className="flex justify-around items-center  bg-[#9538E2] rounded-t-lg text-white mt-5 mr-5 ml-5 p-2">
+      <div className="flex justify-around items-center  bg-white rounded-t-lg text-black mt-5 mr-5 ml-5 p-2">
         <div className="">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -84,4 +84,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default NavBarPro;

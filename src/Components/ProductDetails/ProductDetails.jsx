@@ -16,7 +16,9 @@ const ProductDetails = () => {
   );
   //console.log(product);
   
-  const { setProductId,products } = useContext(cartContext);
+  const { setProductId,products,productdPrice,setProductPrice,WishList,setWishList } = useContext(cartContext);
+  // console.log(productdPrice);
+  // console.log(WishList);
   
 
   const handleCartList = (product_id) => {
@@ -32,7 +34,7 @@ const ProductDetails = () => {
       if (!productExists) {
    
         const newProducts = [...products, addProduct];
- 
+        setProductPrice(productdPrice+addProduct.price)
         setProductId(newProducts);
         notify_1();
       } else {
@@ -42,6 +44,18 @@ const ProductDetails = () => {
     }
   }
 
+
+    const handleWishList = (product_id)=>{
+        const addWishListProduct = allData.find((item) => item.product_id === Number(product_id));
+        if(addWishListProduct){
+          const productExists = WishList.find((product) => product.product_id === addWishListProduct.product_id);
+          if(!productExists){
+            const newWishList = [...WishList,addWishListProduct]
+            setWishList(newWishList)
+          }
+        }
+    }
+    
   return (
     <div>
       <div className="flex flex-col max-w-full h-[300px] bg-[#9538E2] text-center text-white">
@@ -107,7 +121,7 @@ const ProductDetails = () => {
                 </div>
               </div>
               <button onClick={()=>{handleCartList(product_id)}} className="btn bg-[#9538E2] text-white">Add to cart.</button>
-              <button className="btn button rounded-full "><img className="w-[30px] h-[30px] mt-1" src={"https://i.ibb.co.com/Db6k2Bk/icons8-heart-50.png"}></img></button>
+              <button onClick={()=>{handleWishList(product_id)}} className="btn button rounded-full "><img className="w-[30px] h-[30px] mt-1" src={"https://i.ibb.co.com/Db6k2Bk/icons8-heart-50.png"}></img></button>
             </div>
           </div>
         </div>

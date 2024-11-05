@@ -13,6 +13,8 @@ import ProductDetails from "./Components/ProductDetails/ProductDetails.jsx";
 import ShowCategoryData from "./Components/ShowCategoryData/ShowCategoryData.jsx";
 import Cart from "./Components/Cart/Cart.jsx";
 import WishList from "./Components/WishList/WishList.jsx";
+import Histories from "./Components/Histories/Histories.jsx";
+import Trendings from "./Components/Trendings/Trendings.jsx";
 
 
 const router = createBrowserRouter([
@@ -61,6 +63,17 @@ const router = createBrowserRouter([
         element: <ProductDetails></ProductDetails>,
         loader: () => fetch("/allData.json"),
       },
+      {
+        path:"/self",
+        element: <Histories></Histories>,
+        children:[
+           {
+            path: "trending",
+            element: <Trendings></Trendings>
+            
+           }
+        ]
+      }
     ],
   },
 ]);

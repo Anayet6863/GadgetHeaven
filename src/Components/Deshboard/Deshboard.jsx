@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 
 const Deshboard = () => {
   return (
@@ -9,14 +9,14 @@ const Deshboard = () => {
             <h1 className="text-5xl text-white p-10">Deshboard</h1>
             <p className="text-white">Explore the latest gadgets that will take your experience to the next level. From smart devices to<br/> the coolest accessories, we have it all!</p>
         </div>
-     <div className="w-[200px] mx-auto mt-10 mbb-10">
-        <div role="tablist" className="tabs tabs-boxed">
-          <Link to={"cart"} role="tab" className="tab">
+     <div className="w-[170px] mx-auto mt-10 mbb-10">
+        <div role="tablist" className="tabs tabs-boxed flex gap-5">
+          <NavLink className={({isActive})=>`tab ${isActive?"tab-active":""}`} to={"cart"} role="tab">
             Cart
-          </Link>
-          <Link to={"whishlist"} role="tab" className="tab tab-active">
+          </NavLink>
+          <NavLink to={"whishlist"} className={({isActive})=>`tab ${isActive?"tab-active":""}`} role="tab">
             WishList
-          </Link>
+          </NavLink>
         </div>
       </div>
      
