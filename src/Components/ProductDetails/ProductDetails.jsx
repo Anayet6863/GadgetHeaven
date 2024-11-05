@@ -1,23 +1,45 @@
 import { Container } from "postcss";
-import React, { useContext } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
-
-
+import React, { useContext,useEffect } from "react";
+import { useLoaderData, useParams} from "react-router-dom";
+import {cartContext} from "../Root/Root"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 const ProductDetails = () => {
+  
   const params = useParams();
  // console.log(params);
   const { product_id } = params;
   const allData = useLoaderData();
-//   console.log(product_id);
-//   console.log(allData);
-  // const product = allData.find((item)=>item.product_id === product_id)
+
   const product = allData.find(
     (item) => item.product_id === Number(product_id)
   );
   //console.log(product);
+  
+  const { setProductId,products } = useContext(cartContext);
+  
 
-  const handleCartList = (product_id)=>{
-    
+  const handleCartList = (product_id) => {
+    const notify = () => toast("This itme is available in cart! Chose another one.");
+    const notify_1= () =>toast("Wow! Product is added in cart.")
+  
+    const addProduct = allData.find((item) => item.product_id === Number(product_id));
+  
+    if (addProduct) {
+
+      const productExists = products.find((product) => product.product_id === addProduct.product_id);
+      
+      if (!productExists) {
+   
+        const newProducts = [...products, addProduct];
+ 
+        setProductId(newProducts);
+        notify_1();
+      } else {
+        notify();
+      }
+  
+    }
   }
 
   return (
@@ -90,6 +112,7 @@ const ProductDetails = () => {
           </div>
         </div>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };
