@@ -1,3 +1,4 @@
+import { Container } from "postcss";
 import React, { useContext } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 
@@ -14,6 +15,10 @@ const ProductDetails = () => {
     (item) => item.product_id === Number(product_id)
   );
   //console.log(product);
+
+  const handleCartList = (product_id)=>{
+    
+  }
 
   return (
     <div>
@@ -79,7 +84,7 @@ const ProductDetails = () => {
                     {product.rating}
                 </div>
               </div>
-              <button className="btn btn-primary">Add to cart.</button>
+              <button onClick={()=>{handleCartList(product_id)}} className="btn bg-[#9538E2] text-white">Add to cart.</button>
               <button className="btn button rounded-full "><img className="w-[30px] h-[30px] mt-1" src={"https://i.ibb.co.com/Db6k2Bk/icons8-heart-50.png"}></img></button>
             </div>
           </div>

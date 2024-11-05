@@ -11,6 +11,8 @@ import Deshboard from "./Components/Deshboard/Deshboard.jsx";
 import AllProducts from "./Components/AllProducts/AllProducts.jsx";
 import ProductDetails from "./Components/ProductDetails/ProductDetails.jsx";
 import ShowCategoryData from "./Components/ShowCategoryData/ShowCategoryData.jsx";
+import Cart from "./Components/Cart/Cart.jsx";
+import WishList from "./Components/WishList/WishList.jsx";
 
 
 const router = createBrowserRouter([
@@ -43,6 +45,16 @@ const router = createBrowserRouter([
       {
         path: "/deshboard",
         element: <Deshboard></Deshboard>,
+        children:[
+          {
+            path: "cart",
+            element: <Cart></Cart>
+          },
+          {
+            path:"whishlist",
+            element: <WishList></WishList>
+          }
+        ]
       },
       {
         path: "/details/:product_id",
