@@ -4,7 +4,7 @@ import WishLIstSingle from "../WishListSingle/WishLIstSingle";
 
 const WishList = () => {
   const { WishList } = useContext(cartContext);
-  console.log(WishList);
+  //console.log(WishList);
 
   return (
     <>

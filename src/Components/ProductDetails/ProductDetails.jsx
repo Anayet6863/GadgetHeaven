@@ -58,7 +58,7 @@ const ProductDetails = () => {
     
   return (
     <div>
-      <div className="flex flex-col max-w-full h-[300px] bg-[#9538E2] text-center text-white">
+      <div className="flex flex-col max-w-full h-[300px] bg-[#9538E2] text-center text-white pt-5">
         <h1 className="text-5xl">Product Details</h1>
         <p className="mt-5">
           Explore the latest gadgets that will take your experience to the next
@@ -73,16 +73,16 @@ const ProductDetails = () => {
               src={product.product_image}
               className="max-w-sm rounded-lg shadow-xl"
             />
-            <div>
-              <h1>{product.product_title}</h1>
-              <p>Price:$ {product.price}</p>
-              <button className="btn border border-yellow-300 text-black">
+            <div className="font-semibold">
+              <h1 className="mt-1 mb-1">{product.product_title}</h1>
+              <p className="mt-1 mb-1">Price:$ {product.price}</p>
+              <button  className="btn border border-yellow-300 text-black">
                 {product.availability ? "In Stock" : "Out of stock"}
               </button>
-              <p>{product.description}</p>
-              <p>Specification:</p>
+              <p className="mt-1 mb-1">{product.description}</p>
+              <p className="mt-1 mb-1">Specification:</p>
               {product.specification.map((item, idx) => (
-                <p key={idx}>
+                <p key={idx} className="mt-1 mb-1">
                   {idx + 1 + ". "}
                   {item}
                 </p>
@@ -121,7 +121,7 @@ const ProductDetails = () => {
                 </div>
               </div>
               <button onClick={()=>{handleCartList(product_id)}} className="btn bg-[#9538E2] text-white">Add to cart.</button>
-              <button onClick={()=>{handleWishList(product_id)}} className="btn button rounded-full "><img className="w-[30px] h-[30px] mt-1" src={"https://i.ibb.co.com/Db6k2Bk/icons8-heart-50.png"}></img></button>
+              <button onClick={()=>{handleWishList(product_id)}} className="btn button rounded-full"><img className="w-[30px] h-[30px] mt-1" src={"https://i.ibb.co.com/Db6k2Bk/icons8-heart-50.png"}></img></button>
             </div>
           </div>
         </div>

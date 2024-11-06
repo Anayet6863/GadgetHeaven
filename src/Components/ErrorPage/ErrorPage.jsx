@@ -2,8 +2,8 @@ import React from 'react';
 
 const ErrorPage = () => {
     return (
-        <div>
-            <h1  className='text-7xl text-red-600'>Opps!Error.</h1>
+        <div className=' mx-auto flex justify-center items-center h-screen bg-slate-300'>
+            <h1  className='text-7xl text-red-600'>Opps!Error 404!.</h1>
         </div>
     );
 };

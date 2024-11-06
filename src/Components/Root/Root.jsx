@@ -4,6 +4,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import { data } from "autoprefixer";
 import NavBarPro from "../NavBarPro/NavBarPro";
+import { HelmetProvider } from 'react-helmet-async';
 export const allDataContext = createContext();
 export const cartContext = createContext();
 const Root = () => {
@@ -27,6 +28,7 @@ const Root = () => {
   return (
     <div>
       <div>
+      <HelmetProvider>
         <cartContext.Provider
           value={{
             products,
@@ -48,6 +50,7 @@ const Root = () => {
             <Footer></Footer>
           </allDataContext.Provider>
         </cartContext.Provider>
+        </HelmetProvider>
       </div>
     </div>
   );
