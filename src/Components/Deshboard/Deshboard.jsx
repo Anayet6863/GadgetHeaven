@@ -14,7 +14,7 @@ const Deshboard = () => {
         </div>
      <div className="w-[170px] mx-auto mt-10 mb-10">
         <div role="tablist" className="tabs tabs-boxed flex gap-5">
-          <NavLink className={({isActive})=>`tab ${isActive?"tab-active":""}`} to={"cart"} role="tab">
+          <NavLink className={({isActive})=>`tab ${isActive?"tab-active":""}`} to={"/deshboard"} role="tab">
             Cart
           </NavLink>
           <NavLink to={"whishlist"} className={({isActive})=>`tab ${isActive?"tab-active":""}`} role="tab">

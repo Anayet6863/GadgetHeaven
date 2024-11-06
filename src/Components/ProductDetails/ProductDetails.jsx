@@ -46,12 +46,18 @@ const ProductDetails = () => {
 
 
     const handleWishList = (product_id)=>{
+      const wnotify = () => toast("This itme is available in wish list! Chose another one.");
+    const wnotify_1= () =>toast("Wow! Product is added in wish list.")
         const addWishListProduct = allData.find((item) => item.product_id === Number(product_id));
         if(addWishListProduct){
           const productExists = WishList.find((product) => product.product_id === addWishListProduct.product_id);
           if(!productExists){
             const newWishList = [...WishList,addWishListProduct]
             setWishList(newWishList)
+            wnotify_1()
+          }
+          else{
+            wnotify()
           }
         }
     }

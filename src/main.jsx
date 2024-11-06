@@ -50,7 +50,7 @@ const router = createBrowserRouter([
         element: <Deshboard></Deshboard>,
         children:[
           {
-            path: "cart",
+            path: "/deshboard",
             element: <Cart></Cart>
           },
           {

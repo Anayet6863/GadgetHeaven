@@ -6,7 +6,7 @@ const NavBar = () => {
   const { products } = useContext(cartContext);
   const navigate = useNavigate();
   const handleCart = () => {
-    navigate("/deshboard/cart");
+    navigate("/deshboard");
   };
   const handleWishList = () => {
     navigate("/deshboard/whishlist");

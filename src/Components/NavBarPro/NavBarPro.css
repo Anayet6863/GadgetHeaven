@@ -4,7 +4,7 @@
 }
 a.active{
     color:white;
-    background-color: #9538E2;
+    background-color: #9538E2 !important;
     padding-right: 10px;
     padding-left: 10px;
     border-radius: 32px;
