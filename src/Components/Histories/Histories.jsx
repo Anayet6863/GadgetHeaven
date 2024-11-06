@@ -1,10 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { cartContext } from "../Root/Root";
 import History from "../History/History";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
 
 
 const Histories = () => {
+  useEffect(()=>{
+    document.title = "Gadget Heaven || History"
+},[])
   const { purchasedProduct, purchasedTtotal } = useContext(cartContext);
 
   // console.log(purchasedProduct);

@@ -1,5 +1,5 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import "./NavBar.css";
+import "./NavBar.css"
 import { useContext } from "react";
 import { cartContext } from "../Root/Root";
 const NavBar = () => {
@@ -18,7 +18,7 @@ const NavBar = () => {
         <NavLink to={"/"}>Home</NavLink>
         {/* <NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}>Home</NavLink> */}
         <NavLink to={"/statistics"}>Statistics</NavLink>
-        <NavLink to={"/deshboard"}>Deshboard</NavLink>
+        <NavLink to={"/deshboard"}>Dashboard</NavLink>
         <NavLink to={"/self"}>History</NavLink>
       </div>
     </>

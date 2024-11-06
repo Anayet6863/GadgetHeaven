@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
 
 const Deshboard = () => {
+  useEffect(()=>{
+    document.title = "Gadget Heaven || Dashboard"
+},[])
   return (
     <div>
      <div className="bg-[#9538E2] max-w-full h-[300px] text-center">

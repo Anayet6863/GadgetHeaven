@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 const History = ({ item }) => {
+  
   const { product_image, product_title, price, description } = item;
   //    console.log(product_title,price);
   //    console.log(item);

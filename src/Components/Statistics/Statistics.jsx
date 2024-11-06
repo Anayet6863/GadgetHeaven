@@ -1,8 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import  { PureComponent } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 const Statistics = () => {
+    useEffect(()=>{
+            document.title = "Gadget Heaven || Statistics"
+    },[])
     const data = [
         {
           name: 'iphone 11',

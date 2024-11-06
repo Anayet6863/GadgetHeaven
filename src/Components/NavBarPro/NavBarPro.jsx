@@ -17,7 +17,7 @@ const NavBarPro = () => {
         <NavLink to={"/"}>Home</NavLink>
         {/* <NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}>Home</NavLink> */}
         <NavLink to={"/statistics"}>Statistics</NavLink>
-        <NavLink to={"/deshboard"}>Deshboard</NavLink>
+        <NavLink to={"/deshboard"}>Dashboard</NavLink>
         <NavLink to={"/self"}>History</NavLink>
         
       </div>

@@ -26,6 +26,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        
         children: [
           {
             path: "/",
@@ -66,13 +67,6 @@ const router = createBrowserRouter([
       {
         path:"/self",
         element: <Histories></Histories>,
-        // children:[
-        //    {
-        //     path: "trending",
-        //     element: <Trendings></Trendings>
-            
-        //    }
-        // ]
       },
       {
         path:'/trending',

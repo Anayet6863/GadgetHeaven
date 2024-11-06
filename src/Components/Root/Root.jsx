@@ -10,12 +10,12 @@ export const cartContext = createContext();
 const Root = () => {
   const [products, setProductId] = useState([]);
   const [WishList, setWishList] = useState([]);
-  console.log(products);
+ // console.log(products);
   const [productdPrice, setProductPrice] = useState(0);
   const [purchasedProduct,setPurchasedProduct] = useState([]);
   const [allData, setAllData] = useState([]);
     const [purchasedTtotal,setPurchasedTtotal] = useState(0);
-    console.log(purchasedTtotal);
+   // console.log(purchasedTtotal);
   useEffect(() => {
     fetch("./categoryData.json").then((res) =>
       res.json().then((data) => setAllData(data))
@@ -24,7 +24,7 @@ const Root = () => {
   // console.log(allData);
   const location = useLocation();
   const pathName = location.pathname;
-  console.log(pathName);
+ // console.log(pathName);
   return (
     <div>
       <div>

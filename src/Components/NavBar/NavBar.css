@@ -3,8 +3,8 @@
     height: 60px !important;
 }
 a.active{
-    color:black;
-    background-color: white;
+    color: black ;
+    background-color: white ;
     padding-right: 10px;
     padding-left: 10px;
     border-radius: 32px;

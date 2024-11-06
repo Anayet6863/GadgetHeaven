@@ -13,7 +13,7 @@ const Cart = () => {
   const { products, setProductId, productdPrice, setProductPrice,purchasedProduct,setPurchasedProduct,setPurchasedTtotal } =
     useContext(cartContext);
     const [total,setTotal] = useState(productdPrice)
-  console.log(total);
+  //console.log(total);
 
   useEffect(() => {
     setCart(products);
@@ -29,7 +29,7 @@ const Cart = () => {
 
    
 };
-console.log(purchasedProduct);
+// console.log(purchasedProduct);
 
 const closeModal = () => {
   modalRef.current.close(); 

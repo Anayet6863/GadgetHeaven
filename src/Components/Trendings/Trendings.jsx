@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import Trending from "../Trending/Trending";
 
 const Trendings = () => {
+  useEffect(() => {
+    document.title = "Gadget Heaven || Trendings";
+  }, []);
   const [allTrendingData, setAllTrendingData] = useState([]);
   useEffect(() => {
     fetch("./TrendingData.json").then((res) =>
